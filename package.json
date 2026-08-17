@@ -4,7 +4,8 @@
   "main": "serveur.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon serveur.js"
+    "server": "nodemon serveur.js",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "express": "^5.2.1",
     "helmet": "^8.3.0",
     "mongoose": "^9.9.1",
+    "morgan": "^1.11.0",
     "yup": "^1.7.1"
   },
   "devDependencies": {

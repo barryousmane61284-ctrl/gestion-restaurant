@@ -6,6 +6,7 @@ import validationMiddleware from "../../commun/validator.js";
 const routeclient = Router()
 
 routeclient.get("/",clientcontroller.toutclient)
+routeclient.get("/plus-commandes",clientcontroller.meilleursClients)
 routeclient.post("/creation",validationMiddleware(clientschema),clientcontroller.creationclient)
 routeclient.get("/:id",clientcontroller.recuperationId)
 routeclient.put("/:id",clientcontroller.update)

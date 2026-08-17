@@ -20,6 +20,15 @@ class clientcontroller{
             res.json(error)
         }
     }
+    // clients classés par nombre de commandes
+    static meilleursClients = async(req,res)=>{
+        try{
+            res.status(200).json(await clientservice.meilleursClients())
+        }
+        catch(error){
+            res.json(error)
+        }
+    }
     // recuperationID
     static recuperationId = async(req,res)=>{
         try{

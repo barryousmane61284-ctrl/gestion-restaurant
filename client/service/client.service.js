@@ -1,4 +1,5 @@
 import clientrepository from "../repository/client.repository.js";
+import commandeservice from "../../commande/service/commande.service.js";
 
 class clientservice{
     // creation
@@ -9,9 +10,19 @@ class clientservice{
     static toutclient = async()=>{
         return await clientrepository.toutclient()
     }
+    // clients classés par nombre de commandes
+    static meilleursClients = async()=>{
+        return await clientrepository.meilleursClients()
+    }
     // recuperationID
     static recuperationId = async(id)=>{
-        return await clientrepository.recuperationId(id)
+        const client = await clientrepository.recuperationId(id)
+        if(!client){
+            throw new Error("Client not found")
+        }
+
+        const commandes = await commandeservice.recuperationcommandeclient(client._id)
+        return { client, commandes }
     }
     //mise a jour
     static update = async(id,data)=>{

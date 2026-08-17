@@ -16,5 +16,13 @@ class commandeservice{
     static suppression = async(id)=>{
         return await commanderepository.suppression(id)
     }
+
+    static recuperationcommandeclient = async(clientId)=>{
+        const client = await commanderepository.recuperationcommandeclient(clientId)
+        if(!client){
+            throw new Error("Client not found")
+        }
+        return client
+    }
 }
 export default commandeservice;
