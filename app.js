@@ -5,6 +5,7 @@ import routeclient from './client/route/client.route.js';
 import routeplat from './plat/route/plat.route.js';
 import routecategori from './categori/route/categori.route.js';
 import routecommande from './commande/route/commande.route.js';
+import userroute from './user/user.route.js';
 
 // initialisation du serveur express
  const serveur = express();
@@ -16,5 +17,6 @@ serveur.use('/client',routeclient);
 serveur.use('/plat',routeplat);
 serveur.use('/categori',routecategori);
 serveur.use('/commande',routecommande);
+serveur.use('/user',userroute);
 
 export default serveur;

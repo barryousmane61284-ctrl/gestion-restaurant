@@ -11,8 +11,10 @@ class commandeservice{
         return await commanderepository.toutcommande()
     }
     static update = async(id,data)=>{
+        if(!id) throw new Error("id is required")
+            
         return await commanderepository.update(id,data)
-    }
+    } 
     static suppression = async(id)=>{
         return await commanderepository.suppression(id)
     }
